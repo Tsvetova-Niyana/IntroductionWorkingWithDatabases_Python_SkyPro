@@ -2,6 +2,8 @@ import csv
 
 
 def add_employee(file_name, cur):
+    """Функция добавления данных в таблицу employees из файла employees_data.csv"""
+
     with open(file_name, encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
@@ -12,6 +14,8 @@ def add_employee(file_name, cur):
 
 
 def add_customers(file_name, cur):
+    """Функция добавления данных в таблицу customers из файла customers_data.csv"""
+
     with open(file_name, encoding='utf-8') as file:
         reader = csv.DictReader(file)
 
@@ -24,6 +28,7 @@ def add_customers(file_name, cur):
 
 
 def add_orders(file_name, cur):
+    """Функция добавления данных в таблицу orders из файла orders_data.csv"""
     with open(file_name, encoding='utf-8') as file:
         reader = csv.DictReader(file)
 
@@ -34,4 +39,4 @@ def add_orders(file_name, cur):
                 """, (row["order_id"], row["customer_id"], row["employee_id"], row["order_date"], row["ship_city"])
             )
 
-# print(readFile("north_data/employees_data.csv"))
+
